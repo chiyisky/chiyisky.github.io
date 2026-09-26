@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="theme-color" content="#071017">
-<title>贪吃蛇·大世界竞技 V4.3.2</title>
+<title>贪吃蛇·大世界竞技 V4.3.3</title>
 <link rel="stylesheet" href="./v43.css?v=20260926-2127">
 <style>
 .right-controls{position:relative;width:142px;height:154px;pointer-events:none;flex:0 0 142px}.right-controls .boost{position:absolute;right:0;bottom:0;pointer-events:auto}.weapon{position:absolute;border-radius:50%;pointer-events:auto;touch-action:none;user-select:none;color:#fff;font-weight:900;text-shadow:0 1px 3px #000;cursor:pointer}.weapon small{display:block;font-size:9px}.weapon:active{transform:scale(.94)}.weapon.hidden{display:none}.fire{right:5px;bottom:91px;width:66px;height:66px;border:1.5px solid rgba(255,215,90,.72);background:radial-gradient(circle at 38% 32%,rgba(255,225,120,.38),rgba(130,83,25,.3) 62%,rgba(30,18,7,.18));box-shadow:inset 0 0 18px rgba(255,211,72,.12),0 6px 18px rgba(0,0,0,.25);color:#fff7cf}.blade{right:76px;bottom:72px;width:58px;height:58px;border:1.5px solid rgba(255,130,215,.72);background:radial-gradient(circle at 38% 32%,rgba(255,190,235,.40),rgba(112,42,98,.32) 62%,rgba(28,10,26,.2));box-shadow:inset 0 0 18px rgba(255,120,215,.13),0 6px 18px rgba(0,0,0,.25);color:#ffe8fa}.skin[data-skin="qinglong"]{border-color:#3cbf8b}.skin[data-skin="neon"]{border-color:#657cff}.skin[data-skin="lava"]{border-color:#d45c3d}.skin[data-skin="ice"]{border-color:#95eaff}.skin[data-skin="star"]{border-color:#8d82e8}.skin[data-skin="candy"]{border-color:#ff8ec2}.skin[data-skin="mech"]{border-color:#93a5b8}.skin[data-skin="bee"]{border-color:#d8ad39}.skin[data-skin="shadow"]{border-color:#e44862}.skin[data-skin="jade"]{border-color:#54c9ad}@media(max-width:620px){.right-controls{width:130px;height:138px;flex-basis:130px}.fire{right:4px;bottom:80px;width:61px;height:61px;font-size:12px}.blade{right:69px;bottom:63px;width:53px;height:53px;font-size:11px}.weapon small{font-size:8px}}
@@ -26,18 +26,18 @@
     <div class="hud-controls">
       <div class="joy" id="joy" aria-label="方向摇杆"><div class="stick" id="stick"></div></div>
       <div class="right-controls">
-        <button class="weapon blade hidden" id="blade" type="button">✦ 飞刀<small id="bladeCount">×0</small></button>
+        <button class="weapon blade hidden" id="blade" type="button">🪃 飞镖<small id="bladeCount">×0</small></button>
         <button class="weapon fire hidden" id="fire" type="button">💥 开炮<small id="fireCount">×0</small></button>
         <button class="boost" id="boost" type="button">⚡ 加速<small>按住</small></button>
       </div>
     </div>
   </div>
   <div class="meta"><span id="pressureLabel">竞技场压力 0%</span><span id="streakLabel">连斩 0</span><span id="speed">速度 100%</span><span>180×180 大世界</span></div>
-  <div class="powerbar"><span class="effect" id="fxMagnet">🧲 磁铁</span><span class="effect" id="fxSpeed">⚡ 疾速</span><span class="effect" id="fxShield">🛡️ 护盾</span><span class="effect" id="fxGrowth">⭐ 双倍成长</span><span class="effect" id="fxCannon">💥 蛇身炮</span><span class="effect" id="fxBlade">✦ 回旋刀</span></div>
+  <div class="powerbar"><span class="effect" id="fxMagnet">🧲 磁铁</span><span class="effect" id="fxSpeed">⚡ 疾速</span><span class="effect" id="fxShield">🛡️ 护盾</span><span class="effect" id="fxGrowth">⭐ 双倍成长</span><span class="effect" id="fxCannon">💥 蛇身炮</span><span class="effect" id="fxBlade">🪃 回旋飞镖</span></div>
   <div class="skinbar"><span class="skinlabel">皮肤</span><button class="skin active" data-skin="qinglong">🐉 青龙鳞甲</button><button class="skin" data-skin="neon">⚡ 霓虹电弧</button><button class="skin" data-skin="lava">🌋 熔岩裂纹</button><button class="skin" data-skin="ice">❄️ 冰晶棱甲</button><button class="skin" data-skin="star">🌌 星空星尘</button><button class="skin" data-skin="candy">🍬 糖果条纹</button><button class="skin" data-skin="mech">🤖 机甲装甲</button><button class="skin" data-skin="bee">🐝 蜂皇环纹</button><button class="skin" data-skin="shadow">👁️ 暗夜赤瞳</button><button class="skin" data-skin="jade">☁️ 翡翠云纹</button></div>
   <div class="leader" id="leader">排行榜加载中…</div>
-  <div class="note">V4.3.2：AI 攻击性继续增强，会更积极预判、截击、横切、加速抢位；部分远离玩家视野的 AI 会自动获得炮台或回旋刀。攻击类道具刷新提高，场上道具目标数由 9 提高到 12。新增一次性回旋刀：直线贯穿大世界，不直接杀蛇，命中身体会削落一段并变成食物。皮肤升级为 10 套程序化造型纹理；同时降低食物目标、蛇身绘制采样和碰撞采样，优先稳定手机帧率。</div>
+  <div class="note">V4.3.3：修复飞镖图标与命中逻辑；飞镖击中身体后，从命中点往后的身体立即断灭并扩散消失，不再生成可吃食物。普通食物明显减量并改成不规则散布；死亡蛇身掉落会向外扩散后停下。新增低频阵风事件，对玩家和 AI 施加轻微推力。AI 继续采用低频思考、高频执行，并提高截击、横切和远距离获得攻击道具的概率，优先保持手机端流畅。</div>
 </div>
-<script src="./v432.js?v=20260926-2226"></script>
+<script src="./v433.js?v=20260926-2253"></script>
 </body>
 </html>
