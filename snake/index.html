@@ -4,8 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="theme-color" content="#071017">
-<title>贪吃蛇·大世界竞技 V4.3</title>
+<title>贪吃蛇·大世界竞技 V4.3.1</title>
 <link rel="stylesheet" href="./v43.css?v=20260926-2127">
+<style>
+.right-controls{position:relative;width:104px;height:150px;pointer-events:none;flex:0 0 104px}.right-controls .boost{position:absolute;right:0;bottom:0;pointer-events:auto}.fire{position:absolute;right:5px;bottom:92px;width:66px;height:66px;border-radius:50%;pointer-events:auto;touch-action:none;user-select:none;border:1.5px solid rgba(255,215,90,.72);background:radial-gradient(circle at 38% 32%,rgba(255,225,120,.38),rgba(130,83,25,.3) 62%,rgba(30,18,7,.18));box-shadow:inset 0 0 18px rgba(255,211,72,.12),0 6px 18px rgba(0,0,0,.25);color:#fff7cf;font-weight:900;text-shadow:0 1px 3px #000;cursor:pointer}.fire small{display:block;font-size:10px;color:#ffe89d}.fire:active{transform:scale(.94)}.fire.hidden{display:none}@media(max-width:620px){.right-controls{width:94px;height:132px;flex-basis:94px}.fire{right:4px;bottom:80px;width:61px;height:61px;font-size:12px}.fire small{font-size:9px}}
+</style>
 </head>
 <body>
 <div class="wrap" id="app">
@@ -20,14 +23,20 @@
     <div class="kill-flash" id="killFlash"></div>
     <div class="kill-banner" id="killBanner">DOUBLE KILL · 双杀</div>
     <div class="sound-gate" id="soundGate"><div class="sound-card"><button id="startGame" type="button">▶ 开始游戏 · 开启声音</button><small>首次点击后解锁声音；建议打开手机媒体音量</small></div></div>
-    <div class="hud-controls"><div class="joy" id="joy" aria-label="方向摇杆"><div class="stick" id="stick"></div></div><button class="boost" id="boost" type="button">⚡ 加速<small>按住</small></button></div>
+    <div class="hud-controls">
+      <div class="joy" id="joy" aria-label="方向摇杆"><div class="stick" id="stick"></div></div>
+      <div class="right-controls">
+        <button class="fire hidden" id="fire" type="button">💥 开炮<small id="fireCount">×0</small></button>
+        <button class="boost" id="boost" type="button">⚡ 加速<small>按住</small></button>
+      </div>
+    </div>
   </div>
   <div class="meta"><span id="pressureLabel">竞技场压力 0%</span><span id="streakLabel">连斩 0</span><span id="speed">速度 100%</span><span>180×180 大世界</span></div>
-  <div class="powerbar"><span class="effect" id="fxMagnet">🧲 磁铁</span><span class="effect" id="fxSpeed">⚡ 疾速</span><span class="effect" id="fxShield">🛡️ 护盾</span><span class="effect" id="fxGrowth">⭐ 双倍成长</span></div>
+  <div class="powerbar"><span class="effect" id="fxMagnet">🧲 磁铁</span><span class="effect" id="fxSpeed">⚡ 疾速</span><span class="effect" id="fxShield">🛡️ 护盾</span><span class="effect" id="fxGrowth">⭐ 双倍成长</span><span class="effect" id="fxCannon">💥 蛇身炮</span></div>
   <div class="skinbar"><span class="skinlabel">皮肤</span><button class="skin active" data-skin="qinglong">🐉 青龙</button><button class="skin" data-skin="neon">⚡ 霓虹</button><button class="skin" data-skin="lava">🌋 熔岩</button><button class="skin" data-skin="ice">❄️ 冰晶</button><button class="skin" data-skin="star">🌌 星空</button><button class="skin" data-skin="candy">🍬 糖果</button><button class="skin" data-skin="mech">🤖 机甲</button><button class="skin" data-skin="bee">🐝 蜂纹</button></div>
   <div class="leader" id="leader">排行榜加载中…</div>
-  <div class="note">V4.3：玩家保留小半径快速绕圈；AI 允许短时绕圈但会强制脱离，不能无限原地绕；AI 新增追击、预判截击、横切封路和主动加速反杀；AI 靠近边界会回场不再突然整条消失；死亡蛇身优先保留为高亮能量豆；战斗音量和连杀震屏继续加强。</div>
+  <div class="note">V4.3.1：性能优化为 AI 低频决策、高频平滑执行；AI 加强预判、截击、横切与主动加速；新增蛇身炮，炮弹只沿开炮瞬间蛇头方向直线飞行。身体累计中炮 3 次才截掉约后半段，头部中炮立即死亡；每个炮道具 3 发，每发消耗自身少量长度；AI 与玩家遵守完全相同规则。</div>
 </div>
-<script src="./v43.js?v=20260926-2127"></script>
+<script src="./v431.js?v=20260926-2146"></script>
 </body>
 </html>
